@@ -1,0 +1,18 @@
+#!/bin/sh
+#|-*- mode:lisp -*-|#
+#|
+exec ros -Q -- $0 "$@"
+|#
+(progn ;;init forms
+  (ros:ensure-asdf)
+  #+quicklisp (ql:quickload '(:take-stg) :silent t)
+  )
+
+(defpackage :ros.script.take-stg.3734418047
+  (:use :cl))
+(in-package :ros.script.take-stg.3734418047)
+
+(defun main (&rest argv)
+  (declare (ignorable argv))
+  (take-stg:main))
+;;; vim: set ft=lisp lisp:
